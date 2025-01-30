@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import './mainPage.scss';
 import { getCinemaCatalog } from '@/api/imports';
 import FilmCard from './FilmCard';
-import Header from '@/components/Header/Header';
 
 const MainPage = () => {
     
@@ -12,9 +11,6 @@ const MainPage = () => {
         setFilmData(data);
     }, []);
 
-    const openFilmPage = (film: Film) => {
-        console.log("тут будет перекидывание на страницу фильма");
-    }
 
     useEffect(() => {
         getCinemaCatalog({ onDataLoaded: handleDataLoading });
@@ -24,13 +20,12 @@ const MainPage = () => {
     
     return (
         <main>
-            <Header />
             <div className='name'>
                 Афиша
             </div>
             <div className='container_films'>
                 {filmData.map((film) => (
-                    <FilmCard film={film} openFilmPage={() => openFilmPage(film)} key={film.id} />
+                    <FilmCard film={film}/>
                 ))}
             </div>
         </main>

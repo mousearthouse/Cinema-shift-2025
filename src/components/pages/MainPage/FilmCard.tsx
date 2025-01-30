@@ -1,13 +1,20 @@
 import { API_URL } from "@/utils/constants";
 import { russianRatings } from "@/utils/ageRatings";
+import { useNavigate } from "react-router-dom";
 
 export interface FilmCardProps {
-    film: Film,
-    openFilmPage: () => void;
+    film: Film
 }
 
-const FilmCard = ({ film, openFilmPage }: FilmCardProps) => (
-    <div key={film.id} className="film_container">
+const FilmCard = ({ film}: FilmCardProps) => {
+
+  const navigate = useNavigate();
+  const openFilmPage = () => {
+    navigate(`film/${film.id}`);
+  };
+
+  return (    
+  <div key={film.id} className="film_container">
       <img src={`${API_URL}api/${film.img}`} alt={film.name} />
       <div className="film_card">
         <h3>{film.name} ({russianRatings[film.ageRating]})</h3>
@@ -20,7 +27,8 @@ const FilmCard = ({ film, openFilmPage }: FilmCardProps) => (
           <span></span>
         </button>
       </div>
-    </div>
-  );
+    </div>)
+
+};
   
-  export default FilmCard;
+export default FilmCard;
