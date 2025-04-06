@@ -1,8 +1,11 @@
+body {
+  padding-top: 87px;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .container_films {
@@ -20,51 +23,67 @@ main {
   width: 80%;
 }
 
-.film_container {
-    width: 320px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
 
 .film_card {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding: 15px;
     width: 300px;
 }
   
-.film_container img {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
 
-}
   
 .film_card h3 {
     margin: 0;
     padding: 10px 0;
 }
-  
-  .film-card p {
-    margin: 10px 0;
-    padding: 0 10px;
-  }
-  
-  .film_card button {
-    background-color: #9534D2;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    width:100%;
+
+.film-card p {
+  margin: 10px 0;
+  padding: 0 10px;
+}
+
+.film_card button {
+  background-color: #9534D2;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width:100%;
+  border-radius: 10px;
+}
+
+.film_card button:hover {
+  background-color: #7a2bab;
+}
+
+.card-img-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 300px;
     border-radius: 10px;
-  }
-  
-  .film_card button:hover {
-    background-color: #7a2bab;
-  }
+    object-fit: cover;
+}
+
+.card-img-container div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 50px;
+  background-color: whitesmoke;
+  border-radius: 10px 0 10px 0;
+  padding: 6px;
+  text-align: center;
+}
+
+.card-img-container div p {
+  margin-top: 3px;
+  font-size: medium;
+}

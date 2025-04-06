@@ -1,1 +1,1 @@
-heeey here will be my shift frontend task project! 
+SHIFT Intensive winter 2025 task (cinema, easy lvl done)

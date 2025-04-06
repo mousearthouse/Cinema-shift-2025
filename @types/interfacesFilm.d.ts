@@ -38,4 +38,5 @@ interface Film {
         code2: string,
         id: number,
     }
+    genres: string[],
 }
